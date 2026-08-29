@@ -20,6 +20,13 @@
 		FCF3348980C79756E0276684 /* ScanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10C76A464D77875CBDFBEF /* ScanStore.swift */; };
 		D3D8247272E915012481D27C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF390F994F2E083C7133467 /* Assets.xcassets */; };
 		B205C9556846A2FDA53038E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFA3CC2EEBE6066B106BD2F /* Preview Assets.xcassets */; };
+		E22BF4F15B7FB2F7A318923C /* SkinProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC99B18C2D339FE2CEBFAE /* SkinProfile.swift */; };
+		D5A6097607D4298CFF17BAAE /* ProductRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74E4139781B250A724151A7 /* ProductRecommendation.swift */; };
+		62A58B6370F1E2B468B69823 /* RecommendationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF8E4FA8385EFE282901461 /* RecommendationEngine.swift */; };
+		598443A8021E5B587010EE8D /* AmazonLinkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0B2E0EB6B56A973F7A72DD /* AmazonLinkBuilder.swift */; };
+		B9AEA968F5B069D1CF6DD5CB /* SkinProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418A08CD66727750A079D1F /* SkinProfileStore.swift */; };
+		BB116D89DE1567E515DE05C5 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDD95864726615C78DACB0 /* SkinQuizView.swift */; };
+		43AEE2EB9039523821B6C5FB /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8ABED7F54A325C2AA219A /* RecommendationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,13 @@
 		3EF390F994F2E083C7133467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAFA3CC2EEBE6066B106BD2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B1224CACC6AAF123879944E /* SkinScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CC99B18C2D339FE2CEBFAE /* SkinProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProfile.swift; sourceTree = "<group>"; };
+		B74E4139781B250A724151A7 /* ProductRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRecommendation.swift; sourceTree = "<group>"; };
+		7CF8E4FA8385EFE282901461 /* RecommendationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationEngine.swift; sourceTree = "<group>"; };
+		EF0B2E0EB6B56A973F7A72DD /* AmazonLinkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmazonLinkBuilder.swift; sourceTree = "<group>"; };
+		F418A08CD66727750A079D1F /* SkinProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProfileStore.swift; sourceTree = "<group>"; };
+		8BBDD95864726615C78DACB0 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
+		FAD8ABED7F54A325C2AA219A /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				BC6D2D8C420CF09A7D23FB6E /* ScanRecord.swift */,
+				B5CC99B18C2D339FE2CEBFAE /* SkinProfile.swift */,
+				B74E4139781B250A724151A7 /* ProductRecommendation.swift */,
+				7CF8E4FA8385EFE282901461 /* RecommendationEngine.swift */,
+				EF0B2E0EB6B56A973F7A72DD /* AmazonLinkBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -74,6 +92,8 @@
 				5FD72E4B8C5568291D9630EB /* GalleryView.swift */,
 				109BBBE4A255478639F8362E /* ScanDetailView.swift */,
 				FE33ECC637734A42223FDF43 /* CompareView.swift */,
+				8BBDD95864726615C78DACB0 /* SkinQuizView.swift */,
+				FAD8ABED7F54A325C2AA219A /* RecommendationsView.swift */,
 				1EA32D9C739CED45572BA570 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -83,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				6A10C76A464D77875CBDFBEF /* ScanStore.swift */,
+				F418A08CD66727750A079D1F /* SkinProfileStore.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -206,6 +227,13 @@
 				4897FE6AA7EFA35CDE9C82FF /* CompareView.swift in Sources */,
 				EB7E95430ACF84294452756A /* SettingsView.swift in Sources */,
 				FCF3348980C79756E0276684 /* ScanStore.swift in Sources */,
+				E22BF4F15B7FB2F7A318923C /* SkinProfile.swift in Sources */,
+				D5A6097607D4298CFF17BAAE /* ProductRecommendation.swift in Sources */,
+				62A58B6370F1E2B468B69823 /* RecommendationEngine.swift in Sources */,
+				598443A8021E5B587010EE8D /* AmazonLinkBuilder.swift in Sources */,
+				B9AEA968F5B069D1CF6DD5CB /* SkinProfileStore.swift in Sources */,
+				BB116D89DE1567E515DE05C5 /* SkinQuizView.swift in Sources */,
+				43AEE2EB9039523821B6C5FB /* RecommendationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

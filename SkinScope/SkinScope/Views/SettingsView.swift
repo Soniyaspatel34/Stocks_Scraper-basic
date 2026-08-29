@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject private var store: ScanStore
+    @EnvironmentObject private var profileStore: SkinProfileStore
     @State private var showDeleteAllConfirm = false
 
     var body: some View {
@@ -10,9 +11,10 @@ struct SettingsView: View {
                 Section("About SkinScope") {
                     Text(
                         "SkinScope helps you capture, organize, and compare close-up photos of your " +
-                        "skin over time using a plug-in phone microscope or your camera's macro lens. " +
-                        "It's a personal photo journal — it does not analyze, diagnose, or screen for " +
-                        "any medical condition."
+                        "skin over time using a plug-in phone microscope or your camera's macro lens, " +
+                        "and suggests general skincare product categories based on a short quiz. " +
+                        "It's a personal photo journal and shopping helper — it does not analyze, " +
+                        "diagnose, or screen for any medical condition."
                     )
                     .font(.subheadline)
                 }
@@ -27,8 +29,24 @@ struct SettingsView: View {
                     .font(.subheadline)
                 }
 
+                Section("Amazon Associates tag") {
+                    TextField("e.g. yourtag-20", text: $profileStore.amazonAssociatesTag)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                    Text(
+                        "Product links on the Shop tab open an Amazon search with this tag attached, " +
+                        "so qualifying purchases are credited to your Associates account. Leave blank " +
+                        "to open plain, untagged search links instead."
+                    )
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    Text("As an Amazon Associate, this app may earn from qualifying purchases.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
                 Section("Your data") {
-                    Text("Photos and notes are stored only on this device. Nothing is uploaded.")
+                    Text("Photos, notes, and your quiz answers are stored only on this device. Nothing is uploaded.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     Button("Delete all scans", role: .destructive) {
@@ -53,4 +71,5 @@ struct SettingsView: View {
 #Preview {
     SettingsView()
         .environmentObject(ScanStore())
+        .environmentObject(SkinProfileStore())
 }

@@ -13,6 +13,11 @@ struct ContentView: View {
                     Label("History", systemImage: "photo.stack")
                 }
 
+            RecommendationsView()
+                .tabItem {
+                    Label("Shop", systemImage: "cart")
+                }
+
             SettingsView()
                 .tabItem {
                     Label("About", systemImage: "info.circle")
@@ -24,4 +29,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .environmentObject(ScanStore())
+        .environmentObject(SkinProfileStore())
 }
