@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A812F56B4736D6CA40B3D968 /* SkinScopeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08CB574C51AE428465A279 /* SkinScopeApp.swift */; };
+		076950D0F23774BF5885F9FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C09C6BF5EB70228CFDA5D /* ContentView.swift */; };
+		09C62A9EC0C01DB3248E0D8A /* ScanRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D2D8C420CF09A7D23FB6E /* ScanRecord.swift */; };
+		8118D4E6DCB29583806046F8 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D77C44530DD20EF84A40F /* CameraController.swift */; };
+		179B87685411F0010F417959 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDAB5B29851899EF74EE9E /* CameraPreviewView.swift */; };
+		FD7500BCC8D0136CAC394E63 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75252ACE8AF8E5F29B1B6939 /* CaptureView.swift */; };
+		934F5960CFD81FB3F9DDA81C /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD72E4B8C5568291D9630EB /* GalleryView.swift */; };
+		5039721D2DF9D6BB4CFAF536 /* ScanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BBBE4A255478639F8362E /* ScanDetailView.swift */; };
+		4897FE6AA7EFA35CDE9C82FF /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE33ECC637734A42223FDF43 /* CompareView.swift */; };
+		EB7E95430ACF84294452756A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA32D9C739CED45572BA570 /* SettingsView.swift */; };
+		FCF3348980C79756E0276684 /* ScanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A10C76A464D77875CBDFBEF /* ScanStore.swift */; };
+		D3D8247272E915012481D27C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF390F994F2E083C7133467 /* Assets.xcassets */; };
+		B205C9556846A2FDA53038E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFA3CC2EEBE6066B106BD2F /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7F08CB574C51AE428465A279 /* SkinScopeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinScopeApp.swift; sourceTree = "<group>"; };
+		E79C09C6BF5EB70228CFDA5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BC6D2D8C420CF09A7D23FB6E /* ScanRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRecord.swift; sourceTree = "<group>"; };
+		C86D77C44530DD20EF84A40F /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		D2DDAB5B29851899EF74EE9E /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		75252ACE8AF8E5F29B1B6939 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		5FD72E4B8C5568291D9630EB /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		109BBBE4A255478639F8362E /* ScanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDetailView.swift; sourceTree = "<group>"; };
+		FE33ECC637734A42223FDF43 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		1EA32D9C739CED45572BA570 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6A10C76A464D77875CBDFBEF /* ScanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanStore.swift; sourceTree = "<group>"; };
+		3EF390F994F2E083C7133467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAFA3CC2EEBE6066B106BD2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2B1224CACC6AAF123879944E /* SkinScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65E0180516BB32E717CE598D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50C3612EC204613C62D1D5B5 = {
+			isa = PBXGroup;
+			children = (
+				BC6D2D8C420CF09A7D23FB6E /* ScanRecord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8ADA56E0271215A3E3806B03 = {
+			isa = PBXGroup;
+			children = (
+				C86D77C44530DD20EF84A40F /* CameraController.swift */,
+				D2DDAB5B29851899EF74EE9E /* CameraPreviewView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		C9DC91295F02CCC08E5EB687 = {
+			isa = PBXGroup;
+			children = (
+				75252ACE8AF8E5F29B1B6939 /* CaptureView.swift */,
+				5FD72E4B8C5568291D9630EB /* GalleryView.swift */,
+				109BBBE4A255478639F8362E /* ScanDetailView.swift */,
+				FE33ECC637734A42223FDF43 /* CompareView.swift */,
+				1EA32D9C739CED45572BA570 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8D9C52AFAFDAC6E1EEEE7F6 = {
+			isa = PBXGroup;
+			children = (
+				6A10C76A464D77875CBDFBEF /* ScanStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		754B65F25E166733E3290895 = {
+			isa = PBXGroup;
+			children = (
+				AAFA3CC2EEBE6066B106BD2F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9078B8378EE6C5AE758009BB = {
+			isa = PBXGroup;
+			children = (
+				7F08CB574C51AE428465A279 /* SkinScopeApp.swift */,
+				E79C09C6BF5EB70228CFDA5D /* ContentView.swift */,
+				50C3612EC204613C62D1D5B5 /* Models */,
+				8ADA56E0271215A3E3806B03 /* Camera */,
+				C9DC91295F02CCC08E5EB687 /* Views */,
+				F8D9C52AFAFDAC6E1EEEE7F6 /* Persistence */,
+				3EF390F994F2E083C7133467 /* Assets.xcassets */,
+				754B65F25E166733E3290895 /* Preview Content */,
+			);
+			path = SkinScope;
+			sourceTree = "<group>";
+		};
+		92B0870E2235C3B02AE16AA8 = {
+			isa = PBXGroup;
+			children = (
+				2B1224CACC6AAF123879944E /* SkinScope.app */,
+			);
+			sourceTree = "<group>";
+		};
+		2CF0063E0BF7E9CC7F4F9D2A = {
+			isa = PBXGroup;
+			children = (
+				9078B8378EE6C5AE758009BB /* SkinScope */,
+				92B0870E2235C3B02AE16AA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		442D81F3958C32DEA7DB49C0 /* SkinScope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DEDE4FCD9486AFEDD0F3373 /* Build configuration list for PBXNativeTarget "SkinScope" */;
+			buildPhases = (
+				439240B1C2C2CA51B07F1D4E /* Sources */,
+				65E0180516BB32E717CE598D /* Frameworks */,
+				2374F5C9DA2E07A4FB17A3EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkinScope;
+			productName = SkinScope;
+			productReference = 2B1224CACC6AAF123879944E /* SkinScope.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1703DE1A7E6991DE31DB114 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					442D81F3958C32DEA7DB49C0 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = FF1A30DDA819D62DF31B3D75 /* Build configuration list for PBXProject "SkinScope" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CF0063E0BF7E9CC7F4F9D2A;
+			productRefGroup = 92B0870E2235C3B02AE16AA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				442D81F3958C32DEA7DB49C0 /* SkinScope */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2374F5C9DA2E07A4FB17A3EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D8247272E915012481D27C /* Assets.xcassets in Resources */,
+				B205C9556846A2FDA53038E6 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		439240B1C2C2CA51B07F1D4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A812F56B4736D6CA40B3D968 /* SkinScopeApp.swift in Sources */,
+				076950D0F23774BF5885F9FB /* ContentView.swift in Sources */,
+				09C62A9EC0C01DB3248E0D8A /* ScanRecord.swift in Sources */,
+				8118D4E6DCB29583806046F8 /* CameraController.swift in Sources */,
+				179B87685411F0010F417959 /* CameraPreviewView.swift in Sources */,
+				FD7500BCC8D0136CAC394E63 /* CaptureView.swift in Sources */,
+				934F5960CFD81FB3F9DDA81C /* GalleryView.swift in Sources */,
+				5039721D2DF9D6BB4CFAF536 /* ScanDetailView.swift in Sources */,
+				4897FE6AA7EFA35CDE9C82FF /* CompareView.swift in Sources */,
+				EB7E95430ACF84294452756A /* SettingsView.swift in Sources */,
+				FCF3348980C79756E0276684 /* ScanStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		70EF7C7D21EC9240170C93A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		19BEFDE9219FCF215F8099E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A046154E3C631F3602E80954 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SkinScope/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "SkinScope uses the camera (including a connected plug-in microscope) to photograph your skin so you can track it over time.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skinscope.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		651AD8F8E187EBCD1E3AEAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SkinScope/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "SkinScope uses the camera (including a connected plug-in microscope) to photograph your skin so you can track it over time.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skinscope.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF1A30DDA819D62DF31B3D75 /* Build configuration list for PBXProject "SkinScope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70EF7C7D21EC9240170C93A4 /* Debug */,
+				19BEFDE9219FCF215F8099E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DEDE4FCD9486AFEDD0F3373 /* Build configuration list for PBXNativeTarget "SkinScope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A046154E3C631F3602E80954 /* Debug */,
+				651AD8F8E187EBCD1E3AEAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1703DE1A7E6991DE31DB114 /* Project object */;
+}
