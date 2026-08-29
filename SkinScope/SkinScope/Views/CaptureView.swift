@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct CaptureView: View {
     @EnvironmentObject private var store: ScanStore
@@ -21,7 +22,10 @@ struct CaptureView: View {
                             .overlay(showGrid ? AnyView(ReferenceGridOverlay()) : AnyView(EmptyView()))
                             .overlay(FaceZoneOverlay(selectedZone: $selectedZone))
                     } else {
-                        ContentUnavailableCameraView(message: camera.errorMessage)
+                        ContentUnavailableCameraView(
+                            message: camera.errorMessage,
+                            showsSettingsButton: camera.needsSettingsAccess
+                        )
                     }
 
                     VStack {
@@ -203,6 +207,7 @@ private struct ReferenceGridOverlay: View {
 
 private struct ContentUnavailableCameraView: View {
     let message: String?
+    let showsSettingsButton: Bool
 
     var body: some View {
         VStack(spacing: 12) {
@@ -211,6 +216,15 @@ private struct ContentUnavailableCameraView: View {
             Text(message ?? "Requesting camera access…")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
+            if showsSettingsButton {
+                Button("Open Settings") {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        UIApplication.shared.open(url)
+                    }
+                }
+                .buttonStyle(.bordered)
+                .tint(.white)
+            }
         }
         .foregroundStyle(.white)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

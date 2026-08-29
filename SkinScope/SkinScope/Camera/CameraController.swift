@@ -22,6 +22,9 @@ final class CameraController: NSObject, ObservableObject {
     @Published private(set) var isAuthorized = false
     @Published private(set) var isUsingExternalMicroscope = false
     @Published private(set) var isSessionRunning = false
+    /// True when the fix is to change a Settings toggle, not just retry —
+    /// used to show an "Open Settings" button instead of leaving a dead end.
+    @Published private(set) var needsSettingsAccess = false
     @Published var minZoomFactor: CGFloat = 1.0
     @Published var maxZoomFactor: CGFloat = 1.0
     @Published var zoomFactor: CGFloat = 1.0 {
@@ -59,20 +62,24 @@ final class CameraController: NSObject, ObservableObject {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             isAuthorized = true
+            needsSettingsAccess = false
             configureAndStart()
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
                 Task { @MainActor in
                     self?.isAuthorized = granted
                     if granted {
+                        self?.needsSettingsAccess = false
                         self?.configureAndStart()
                     } else {
+                        self?.needsSettingsAccess = true
                         self?.errorMessage = "Camera access is required to take skin photos."
                     }
                 }
             }
         default:
             isAuthorized = false
+            needsSettingsAccess = true
             errorMessage = "Camera access is disabled. Enable it in Settings to use SkinScope."
         }
     }
