@@ -7,6 +7,10 @@ struct ScanRecord: Identifiable, Codable, Hashable {
     var bodyLocation: String
     var note: String
     var imageFileName: String
+    /// An optional normal (non-microscope) photo taken just before plugging
+    /// in the microscope — a wide reference shot of the same zone, for
+    /// context alongside the close-up. Nil when the user skipped it.
+    var contextImageFileName: String?
     /// Millimeters represented by the width of the on-screen reference grid at
     /// capture time, if the user had a scale reference visible. Nil when unknown.
     var referenceWidthMM: Double?
@@ -17,6 +21,7 @@ struct ScanRecord: Identifiable, Codable, Hashable {
         bodyLocation: String,
         note: String = "",
         imageFileName: String,
+        contextImageFileName: String? = nil,
         referenceWidthMM: Double? = nil
     ) {
         self.id = id
@@ -24,6 +29,7 @@ struct ScanRecord: Identifiable, Codable, Hashable {
         self.bodyLocation = bodyLocation
         self.note = note
         self.imageFileName = imageFileName
+        self.contextImageFileName = contextImageFileName
         self.referenceWidthMM = referenceWidthMM
     }
 }

@@ -34,28 +34,43 @@ final class ScanStore: ObservableObject {
     }
 
     @discardableResult
-    func addScan(image: UIImage, bodyLocation: String, note: String, referenceWidthMM: Double?) -> ScanRecord? {
-        guard let data = image.jpegData(compressionQuality: 0.92) else { return nil }
+    func addScan(
+        image: UIImage,
+        bodyLocation: String,
+        note: String,
+        contextImage: UIImage? = nil,
+        referenceWidthMM: Double?
+    ) -> ScanRecord? {
+        guard let fileName = writeJPEG(image) else { return nil }
 
-        let fileName = "\(UUID().uuidString).jpg"
-        let fileURL = imagesDirectory.appendingPathComponent(fileName)
-
-        do {
-            try data.write(to: fileURL, options: .atomic)
-        } catch {
-            print("SkinScope: failed to write image — \(error)")
-            return nil
+        var contextFileName: String?
+        if let contextImage {
+            contextFileName = writeJPEG(contextImage)
         }
 
         let record = ScanRecord(
             bodyLocation: bodyLocation,
             note: note,
             imageFileName: fileName,
+            contextImageFileName: contextFileName,
             referenceWidthMM: referenceWidthMM
         )
         records.append(record)
         save()
         return record
+    }
+
+    private func writeJPEG(_ image: UIImage) -> String? {
+        guard let data = image.jpegData(compressionQuality: 0.92) else { return nil }
+        let fileName = "\(UUID().uuidString).jpg"
+        let fileURL = imagesDirectory.appendingPathComponent(fileName)
+        do {
+            try data.write(to: fileURL, options: .atomic)
+            return fileName
+        } catch {
+            print("SkinScope: failed to write image — \(error)")
+            return nil
+        }
     }
 
     func updateNote(for record: ScanRecord, note: String) {
@@ -65,8 +80,10 @@ final class ScanStore: ObservableObject {
     }
 
     func delete(_ record: ScanRecord) {
-        let fileURL = imagesDirectory.appendingPathComponent(record.imageFileName)
-        try? fileManager.removeItem(at: fileURL)
+        try? fileManager.removeItem(at: imagesDirectory.appendingPathComponent(record.imageFileName))
+        if let contextFileName = record.contextImageFileName {
+            try? fileManager.removeItem(at: imagesDirectory.appendingPathComponent(contextFileName))
+        }
         records.removeAll { $0.id == record.id }
         save()
     }
@@ -74,6 +91,9 @@ final class ScanStore: ObservableObject {
     func deleteAll() {
         for record in records {
             try? fileManager.removeItem(at: imagesDirectory.appendingPathComponent(record.imageFileName))
+            if let contextFileName = record.contextImageFileName {
+                try? fileManager.removeItem(at: imagesDirectory.appendingPathComponent(contextFileName))
+            }
         }
         records.removeAll()
         save()
@@ -81,6 +101,11 @@ final class ScanStore: ObservableObject {
 
     func image(for record: ScanRecord) -> UIImage? {
         UIImage(contentsOfFile: imagesDirectory.appendingPathComponent(record.imageFileName).path)
+    }
+
+    func contextImage(for record: ScanRecord) -> UIImage? {
+        guard let contextFileName = record.contextImageFileName else { return nil }
+        return UIImage(contentsOfFile: imagesDirectory.appendingPathComponent(contextFileName).path)
     }
 
     // MARK: - Disk I/O

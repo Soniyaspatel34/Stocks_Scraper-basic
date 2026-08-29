@@ -9,6 +9,8 @@ struct CaptureView: View {
     @State private var showGrid = false
     @State private var capturedImage: UIImage?
     @State private var isSaving = false
+    @State private var pendingReferencePhoto: UIImage?
+    @State private var isCapturingReferencePhoto = false
 
     var body: some View {
         NavigationStack {
@@ -67,6 +69,10 @@ struct CaptureView: View {
                     .padding(.top, 8)
                 }
 
+                referencePhotoRow
+                    .padding(.horizontal)
+                    .padding(.top, 8)
+
                 Form {
                     Section("Zone — tap the dot, on the diagram or the live view") {
                         FaceMapPickerView(selectedZone: $selectedZone)
@@ -111,14 +117,58 @@ struct CaptureView: View {
         }
     }
 
+    @ViewBuilder
+    private var referencePhotoRow: some View {
+        if let pendingReferencePhoto {
+            HStack {
+                Image(uiImage: pendingReferencePhoto)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 44, height: 44)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                Text("Reference photo added")
+                    .font(.subheadline)
+                Spacer()
+                Button("Remove") { self.pendingReferencePhoto = nil }
+                    .font(.subheadline)
+            }
+        } else {
+            Button {
+                captureReferencePhoto()
+            } label: {
+                Label(
+                    isCapturingReferencePhoto ? "Capturing…" : "Add reference photo (before plugging in microscope)",
+                    systemImage: "camera.on.rectangle"
+                )
+                .font(.subheadline)
+            }
+            .disabled(!camera.isAuthorized || isCapturingReferencePhoto)
+        }
+    }
+
+    private func captureReferencePhoto() {
+        isCapturingReferencePhoto = true
+        camera.capturePhoto { image in
+            isCapturingReferencePhoto = false
+            pendingReferencePhoto = image
+        }
+    }
+
     private func capture() {
         isSaving = true
         camera.capturePhoto { image in
             defer { isSaving = false }
             guard let image else { return }
-            store.addScan(image: image, bodyLocation: selectedZone.rawValue, note: note, referenceWidthMM: nil)
+            store.addScan(
+                image: image,
+                bodyLocation: selectedZone.rawValue,
+                note: note,
+                contextImage: pendingReferencePhoto,
+                referenceWidthMM: nil
+            )
             capturedImage = image
             note = ""
+            pendingReferencePhoto = nil
         }
     }
 }

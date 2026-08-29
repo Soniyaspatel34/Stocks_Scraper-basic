@@ -30,6 +30,20 @@ struct ScanDetailView: View {
                         .foregroundStyle(.secondary)
                 }
 
+                if let contextImage = store.contextImage(for: record) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Reference photo").font(.headline)
+                        Image(uiImage: contextImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxHeight: 220)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                        Text("Taken with the normal camera before the microscope was plugged in, for context.")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Note").font(.headline)
                     TextField("Add a note", text: $note, axis: .vertical)
