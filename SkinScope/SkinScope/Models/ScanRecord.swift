@@ -28,23 +28,3 @@ struct ScanRecord: Identifiable, Codable, Hashable {
     }
 }
 
-/// Common body-location presets, editable/extendable by the user via a custom entry.
-enum BodyLocationPreset: String, CaseIterable, Identifiable {
-    case scalp = "Scalp"
-    case face = "Face"
-    case neck = "Neck"
-    case chest = "Chest"
-    case back = "Back"
-    case leftArm = "Left Arm"
-    case rightArm = "Right Arm"
-    case leftHand = "Left Hand"
-    case rightHand = "Right Hand"
-    case abdomen = "Abdomen"
-    case leftLeg = "Left Leg"
-    case rightLeg = "Right Leg"
-    case leftFoot = "Left Foot"
-    case rightFoot = "Right Foot"
-    case other = "Other"
-
-    var id: String { rawValue }
-}

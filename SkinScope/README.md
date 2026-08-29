@@ -9,14 +9,19 @@ journal + shopping helper — **not** a diagnostic or medical device.
 
 - **Live capture** with pinch-free zoom slider, torch toggle, and an optional
   reference grid overlay to help frame shots consistently.
+- **12-zone face map**: instead of free-text location tagging, every scan is
+  logged against one of 12 fixed face zones (forehead, temples, under-eyes,
+  nose, cheeks, upper lip, jawlines, chin). Position-guide dots are overlaid
+  live on the camera preview — and on a tappable face diagram in the capture
+  form — so you can land the microscope in roughly the same spot each time.
 - **Automatic microscope detection**: on iOS 17+, a UVC-compliant digital
   microscope plugged in via Lightning/USB-C is detected and used automatically
   (`AVCaptureDevice.DeviceType.external`). If no external microscope is
   attached, it falls back to the iPhone's ultra-wide/wide camera, which works
   well with cheap optical clip-on macro lenses.
-- **Organized history** grouped by body location (face, arm, back, etc., or a
-  custom label), each photo with a note and timestamp.
-- **Side-by-side compare** view to pick two photos of the same spot from
+- **History as a 12-zone grid** — each cell shows the latest photo for that
+  zone; tap through for the full timeline.
+- **Side-by-side compare** view to pick two photos of the same zone from
   different dates and look for change.
 - **Zoom + share** on any saved photo.
 - **Shop tab**: a short quiz (skin type + concerns) drives a curated list of
@@ -104,19 +109,25 @@ SkinScope/
     CameraController.swift  AVFoundation session, device selection, zoom/torch/capture
     CameraPreviewView.swift UIKit bridge for the live preview layer
   Models/
-    ScanRecord.swift             Photo + metadata model, body-location presets
+    ScanRecord.swift             Photo + metadata model
+    FaceZone.swift                12 fixed face zones + their diagram/overlay positions
     SkinProfile.swift            Skin type / concern enums + quiz-answer model
     ProductRecommendation.swift  A single suggested product category
     RecommendationEngine.swift   Static skin-profile -> recommendations lookup
     AmazonLinkBuilder.swift      Builds tagged Amazon search URLs
+    ImageAnalyzer.swift          Rough whole-photo brightness/redness averages
   Persistence/
     ScanStore.swift          Local JSON index + JPEG files in Documents
     SkinProfileStore.swift   Quiz answers + Amazon Associates tag (UserDefaults)
   Views/
     CaptureView.swift          Live capture screen
-    GalleryView.swift          History grouped by body location
+    FaceMapPickerView.swift    Tappable face diagram for choosing a zone
+    FaceZoneOverlay.swift      Position-guide dots over the live camera feed
+    GalleryView.swift          History as a 12-zone grid
+    ZoneHistoryView.swift      Full timeline for one zone
     ScanDetailView.swift       Full-screen zoomable photo, notes, delete/share
-    CompareView.swift          Side-by-side comparison across dates
+    CompareView.swift          Side-by-side comparison across dates, with a rough
+                                brightness/redness delta
     SkinQuizView.swift         Skin type + concerns quiz
     RecommendationsView.swift  Shop tab: suggestions + Amazon links
     SettingsView.swift         Disclaimer, Associates tag entry, data management

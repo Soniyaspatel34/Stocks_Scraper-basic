@@ -33,10 +33,6 @@ final class ScanStore: ObservableObject {
             .sorted { $0.date < $1.date }
     }
 
-    var distinctBodyLocations: [String] {
-        Array(Set(records.map(\.bodyLocation))).sorted()
-    }
-
     @discardableResult
     func addScan(image: UIImage, bodyLocation: String, note: String, referenceWidthMM: Double?) -> ScanRecord? {
         guard let data = image.jpegData(compressionQuality: 0.92) else { return nil }

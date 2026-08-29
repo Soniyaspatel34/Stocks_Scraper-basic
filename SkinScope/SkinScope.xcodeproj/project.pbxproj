@@ -28,6 +28,10 @@
 		BB116D89DE1567E515DE05C5 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDD95864726615C78DACB0 /* SkinQuizView.swift */; };
 		43AEE2EB9039523821B6C5FB /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8ABED7F54A325C2AA219A /* RecommendationsView.swift */; };
 		D612EED1ADEFCACE9DA23B3C /* ImageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB93300EA152F6D5F0FC84 /* ImageAnalyzer.swift */; };
+		2A11B110DE9ACFC6C498B6BA /* FaceZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEC70A9DA03F052573819A /* FaceZone.swift */; };
+		5A9F7030AACB0F1FE86ADA2E /* FaceMapPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15219E4F710A4AAA473D623B /* FaceMapPickerView.swift */; };
+		F7699D563482B9F06A7B9EBD /* FaceZoneOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E7F0A7D6DF470BD617D75 /* FaceZoneOverlay.swift */; };
+		0DEA036EAE3BBA19DF8DA43D /* ZoneHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4955EDE9C52E73C56D66361 /* ZoneHistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		8BBDD95864726615C78DACB0 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
 		FAD8ABED7F54A325C2AA219A /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
 		A9EB93300EA152F6D5F0FC84 /* ImageAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalyzer.swift; sourceTree = "<group>"; };
+		F0CEC70A9DA03F052573819A /* FaceZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceZone.swift; sourceTree = "<group>"; };
+		15219E4F710A4AAA473D623B /* FaceMapPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMapPickerView.swift; sourceTree = "<group>"; };
+		F28E7F0A7D6DF470BD617D75 /* FaceZoneOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceZoneOverlay.swift; sourceTree = "<group>"; };
+		B4955EDE9C52E73C56D66361 /* ZoneHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneHistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,7 @@
 				7CF8E4FA8385EFE282901461 /* RecommendationEngine.swift */,
 				EF0B2E0EB6B56A973F7A72DD /* AmazonLinkBuilder.swift */,
 				A9EB93300EA152F6D5F0FC84 /* ImageAnalyzer.swift */,
+				F0CEC70A9DA03F052573819A /* FaceZone.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,6 +106,9 @@
 				FE33ECC637734A42223FDF43 /* CompareView.swift */,
 				8BBDD95864726615C78DACB0 /* SkinQuizView.swift */,
 				FAD8ABED7F54A325C2AA219A /* RecommendationsView.swift */,
+				15219E4F710A4AAA473D623B /* FaceMapPickerView.swift */,
+				F28E7F0A7D6DF470BD617D75 /* FaceZoneOverlay.swift */,
+				B4955EDE9C52E73C56D66361 /* ZoneHistoryView.swift */,
 				1EA32D9C739CED45572BA570 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -238,6 +250,10 @@
 				BB116D89DE1567E515DE05C5 /* SkinQuizView.swift in Sources */,
 				43AEE2EB9039523821B6C5FB /* RecommendationsView.swift in Sources */,
 				D612EED1ADEFCACE9DA23B3C /* ImageAnalyzer.swift in Sources */,
+				2A11B110DE9ACFC6C498B6BA /* FaceZone.swift in Sources */,
+				5A9F7030AACB0F1FE86ADA2E /* FaceMapPickerView.swift in Sources */,
+				F7699D563482B9F06A7B9EBD /* FaceZoneOverlay.swift in Sources */,
+				0DEA036EAE3BBA19DF8DA43D /* ZoneHistoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

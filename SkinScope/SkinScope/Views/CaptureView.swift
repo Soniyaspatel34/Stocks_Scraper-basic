@@ -4,18 +4,11 @@ struct CaptureView: View {
     @EnvironmentObject private var store: ScanStore
     @StateObject private var camera = CameraController()
 
-    @State private var bodyLocation: String = BodyLocationPreset.face.rawValue
-    @State private var customLocation: String = ""
+    @State private var selectedZone: FaceZone = .forehead
     @State private var note: String = ""
-    @State private var showGrid = true
+    @State private var showGrid = false
     @State private var capturedImage: UIImage?
     @State private var isSaving = false
-
-    private var resolvedBodyLocation: String {
-        bodyLocation == BodyLocationPreset.other.rawValue
-            ? (customLocation.isEmpty ? "Other" : customLocation)
-            : bodyLocation
-    }
 
     var body: some View {
         NavigationStack {
@@ -24,6 +17,7 @@ struct CaptureView: View {
                     if camera.isAuthorized {
                         CameraPreviewView(session: camera.session)
                             .overlay(showGrid ? AnyView(ReferenceGridOverlay()) : AnyView(EmptyView()))
+                            .overlay(FaceZoneOverlay(selectedZone: $selectedZone))
                     } else {
                         ContentUnavailableCameraView(message: camera.errorMessage)
                     }
@@ -74,22 +68,22 @@ struct CaptureView: View {
                 }
 
                 Form {
-                    Section("Body location") {
-                        Picker("Location", selection: $bodyLocation) {
-                            ForEach(BodyLocationPreset.allCases) { preset in
-                                Text(preset.rawValue).tag(preset.rawValue)
-                            }
-                        }
-                        if bodyLocation == BodyLocationPreset.other.rawValue {
-                            TextField("Custom location", text: $customLocation)
-                        }
+                    Section("Zone — tap the dot, on the diagram or the live view") {
+                        FaceMapPickerView(selectedZone: $selectedZone)
+                            .frame(height: 180)
+                            .frame(maxWidth: .infinity)
+                            .listRowInsets(EdgeInsets())
+                            .padding(.vertical, 8)
+                        Text(selectedZone.rawValue)
+                            .font(.headline)
+                            .frame(maxWidth: .infinity, alignment: .center)
                     }
                     Section("Note") {
                         TextField("e.g. new mole, itchy patch, follow-up", text: $note, axis: .vertical)
                             .lineLimit(2...4)
                     }
                 }
-                .frame(maxHeight: 220)
+                .frame(maxHeight: 320)
 
                 Button {
                     capture()
@@ -112,7 +106,7 @@ struct CaptureView: View {
             )) {
                 Button("OK") { capturedImage = nil }
             } message: {
-                Text("Added to \(resolvedBodyLocation) in History.")
+                Text("Added to \(selectedZone.rawValue) in History.")
             }
         }
     }
@@ -122,7 +116,7 @@ struct CaptureView: View {
         camera.capturePhoto { image in
             defer { isSaving = false }
             guard let image else { return }
-            store.addScan(image: image, bodyLocation: resolvedBodyLocation, note: note, referenceWidthMM: nil)
+            store.addScan(image: image, bodyLocation: selectedZone.rawValue, note: note, referenceWidthMM: nil)
             capturedImage = image
             note = ""
         }
