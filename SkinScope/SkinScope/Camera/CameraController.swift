@@ -227,8 +227,21 @@ final class CameraController: NSObject, ObservableObject {
         photoCompletion = completion
         let settings = AVCapturePhotoSettings()
         settings.flashMode = .off
-        sessionQueue.async { [photoOutput] in
-            photoOutput.capturePhoto(with: settings, delegate: self)
+        sessionQueue.async { [weak self] in
+            guard let self else { return }
+            // AVCapturePhotoOutput throws an uncatchable Objective-C exception
+            // (not a Swift `Error`) if capturePhoto is called without a
+            // running session and an active video connection — most visible
+            // on the Simulator, where a virtual/passthrough camera can report
+            // as available without actually delivering frames.
+            guard self.session.isRunning, self.photoOutput.connection(with: .video)?.isActive == true else {
+                Task { @MainActor in
+                    self.photoCompletion?(nil)
+                    self.photoCompletion = nil
+                }
+                return
+            }
+            self.photoOutput.capturePhoto(with: settings, delegate: self)
         }
     }
 }

@@ -12,6 +12,7 @@ struct CaptureView: View {
     @State private var isSaving = false
     @State private var pendingReferencePhoto: UIImage?
     @State private var isCapturingReferencePhoto = false
+    @State private var captureFailed = false
 
     var body: some View {
         NavigationStack {
@@ -118,6 +119,11 @@ struct CaptureView: View {
             } message: {
                 Text("Added to \(selectedZone.rawValue) in History.")
             }
+            .alert("Couldn't capture photo", isPresented: $captureFailed) {
+                Button("OK") {}
+            } message: {
+                Text("The camera wasn't ready — try again. On the Simulator, still-photo capture isn't fully supported even when the live preview works; a physical iPhone is needed to test this reliably.")
+            }
         }
     }
 
@@ -162,7 +168,10 @@ struct CaptureView: View {
         isSaving = true
         camera.capturePhoto { image in
             defer { isSaving = false }
-            guard let image else { return }
+            guard let image else {
+                captureFailed = true
+                return
+            }
             store.addScan(
                 image: image,
                 bodyLocation: selectedZone.rawValue,
