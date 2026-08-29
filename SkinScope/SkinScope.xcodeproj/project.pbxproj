@@ -27,6 +27,7 @@
 		B9AEA968F5B069D1CF6DD5CB /* SkinProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418A08CD66727750A079D1F /* SkinProfileStore.swift */; };
 		BB116D89DE1567E515DE05C5 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDD95864726615C78DACB0 /* SkinQuizView.swift */; };
 		43AEE2EB9039523821B6C5FB /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8ABED7F54A325C2AA219A /* RecommendationsView.swift */; };
+		D612EED1ADEFCACE9DA23B3C /* ImageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EB93300EA152F6D5F0FC84 /* ImageAnalyzer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		F418A08CD66727750A079D1F /* SkinProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProfileStore.swift; sourceTree = "<group>"; };
 		8BBDD95864726615C78DACB0 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
 		FAD8ABED7F54A325C2AA219A /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
+		A9EB93300EA152F6D5F0FC84 /* ImageAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalyzer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				B74E4139781B250A724151A7 /* ProductRecommendation.swift */,
 				7CF8E4FA8385EFE282901461 /* RecommendationEngine.swift */,
 				EF0B2E0EB6B56A973F7A72DD /* AmazonLinkBuilder.swift */,
+				A9EB93300EA152F6D5F0FC84 /* ImageAnalyzer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				B9AEA968F5B069D1CF6DD5CB /* SkinProfileStore.swift in Sources */,
 				BB116D89DE1567E515DE05C5 /* SkinQuizView.swift in Sources */,
 				43AEE2EB9039523821B6C5FB /* RecommendationsView.swift in Sources */,
+				D612EED1ADEFCACE9DA23B3C /* ImageAnalyzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
